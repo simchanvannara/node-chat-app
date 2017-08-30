@@ -17,6 +17,10 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('User disconnected');
     });
+
+    socket.emit('newEmail', {
+        name: 'simon'
+    });
 });
 server.listen(port, () => {
     console.log(`Server is up on port ${port}`);
